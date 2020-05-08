@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.content-list {
+    margin: 2% 5%;
+    padding: 2% 5%;
+}
+
+.content-table {
+    position: relative;
+    max-height: 485px;
+    overflow: auto;
+}
+
+.copy-button {
+    width: 25px;
+    height: 25px;
+}
+
+.footer {
+    bottom: 0;
+    position: sticky;
+    z-index: 10;
+}
