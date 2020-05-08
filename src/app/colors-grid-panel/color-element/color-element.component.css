@@ -1,0 +1,39 @@
+.color-button {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-button:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.content-init {
+    padding: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.content-end {
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.content-center {
+    flex: inherit;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.blue-snackbar {
+    background-color: #2196F3;
+}

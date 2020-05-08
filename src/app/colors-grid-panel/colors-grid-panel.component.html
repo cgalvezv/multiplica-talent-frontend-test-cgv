@@ -1,0 +1,17 @@
+
+<div *ngIf="!!colorData" class="container">
+    <app-color-element 
+        class="item"
+        *ngFor="let color of colors"
+        [colorCode]="color.color"
+        [colorName]="color.name"
+        [year]="color.year"
+        [pantone]="color.pantone_value"
+    ></app-color-element>
+</div>
+<app-paginator
+    *ngIf="!!colorData"
+    [length]="colorData.total"
+    [pageSize]="colorData.per_page"
+    (pageChangeEvent)="changePage($event)"
+></app-paginator>

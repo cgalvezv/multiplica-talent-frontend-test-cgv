@@ -1,0 +1,15 @@
+<button mat-stroked-button 
+    class="color-button"
+    (click)="onCopyAction(colorName, colorCode)"
+    [ngStyle]="backgroundColor">
+    <div class="content-init">
+      {{ year }}
+    </div>
+    <div class="content-center">
+      <h4 class="text-center">{{ colorName | uppercase }}</h4>
+      <p class="text-center">{{ colorCode }}</p>
+    </div>
+    <div class="content-end">
+      {{ pantone }}
+    </div>
+</button>
