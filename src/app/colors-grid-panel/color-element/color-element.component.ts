@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { copyToClipboard } from 'src/app/shared/functions/clipboard.functions';
 
 @Component({
   selector: 'app-color-element',
@@ -26,21 +27,10 @@ export class ColorElementComponent implements OnInit {
 
   onCopyAction(colorName: string, colorCode: string) {
     const message = 'Color ' + colorName + ' copied!';
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = colorCode;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
+    copyToClipboard(colorCode.toLocaleUpperCase());
     this._snackBar.open(message, null, {
       duration: 2000,
       panelClass: 'blue-snackbar'
     });
   }
-
 }
