@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ColorsGridPanelComponent } from './colors-grid-panel/colors-grid-panel.component';
@@ -12,6 +13,8 @@ import { PaginatorComponent } from './shared/paginator/paginator.component';
 import { MaterialModule } from './shared/material.module';
 import { MainPanelComponent } from './main-panel/main-panel.component';
 import { ColorApiService } from './shared/services/color-api.service';
+import { MobileBottomSheetComponent } from './shared/mobile-bottom-sheet/mobile-bottom-sheet.component';
+import { ColorFilterPipe } from './shared/pipes/color-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { ColorApiService } from './shared/services/color-api.service';
     ColorsListPanelComponent,
     ColorElementComponent,
     PaginatorComponent,
-    MainPanelComponent
+    MainPanelComponent,
+    MobileBottomSheetComponent,
+    ColorFilterPipe
   ],
   imports: [
     HttpClientModule,
@@ -28,7 +33,8 @@ import { ColorApiService } from './shared/services/color-api.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ],
   providers: [
     ColorApiService

@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ color.color }} information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <p>
+                    <b>Name: </b>
+                    {{ color.name | uppercase }}
+                </p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <p>
+                    <b>Code: </b>
+                    {{ color.color }}
+                </p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <p>
+                    <b>Year: </b>
+                    {{ color.year }}
+                </p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <p>
+                    <b>Pantone value: </b>
+                    {{ color.pantone_value }}
+                </p>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
+<div>
+    <button mat-raised-button color="primary"
+        (click)="close()">
+        COPY CODE IN CLIPBOARD
+    </button>
+</div>

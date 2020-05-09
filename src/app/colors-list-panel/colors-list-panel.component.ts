@@ -1,10 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { ColorApiService } from '../shared/services/color-api.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { Color } from '../shared/models/color.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { copyToClipboard } from '../shared/functions/clipboard.functions';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-colors-list-panel',
@@ -12,33 +14,47 @@ import { copyToClipboard } from '../shared/functions/clipboard.functions';
   styleUrls: ['./colors-list-panel.component.css']
 })
 export class ColorsListPanelComponent implements OnInit {
+
   dataSource: MatTableDataSource<Color> = null;
-  displayedColumns: string[] = [
-    'color_button',
-    'color_name',
-    'color_code',
-    'year',
-    'pantone'
-  ];
+  displayedColumns: string[] = null;
+  currentScreenWidth = '';
   
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
   constructor(
-    private _snackBar: MatSnackBar,
-    private _colorsAPI: ColorApiService
-  ) { 
-    this._initColors(1, 100000000);
+    private snackBar: MatSnackBar,
+    private colorsAPI: ColorApiService,
+    private mediaObs: MediaObserver
+  ) {
+    this.mediaObs.media$.subscribe((change: MediaChange) => {
+      if (change.mqAlias !== this.currentScreenWidth) {
+          this.currentScreenWidth = change.mqAlias;
+          this._onChangeCurrenScreenWidth();
+      }
+    });
   }
 
   ngOnInit(): void {
-    this.dataSource.sort = this.sort;
+    this._initColors(1, 20);
   }
 
   private _initColors(page: number, perPage: number) {
-    this._colorsAPI.getColors(page, perPage).subscribe(res => {
+    this.colorsAPI.getColors(page, perPage).subscribe(res => {
       if (!!res) {
         this.dataSource = new MatTableDataSource(res.data);
       }
     });
+  }
+
+  private _onChangeCurrenScreenWidth() {
+    this.displayedColumns = [
+      'color_button',
+      'color_name',
+      'color_code',
+      'year',
+      'pantone'
+    ];
+    if (this.currentScreenWidth === 'xs' || this.currentScreenWidth === 'sm') {
+      this.displayedColumns = this.displayedColumns.slice(0, -2);
+    }
   }
 
   applyFilter(event: Event) {
@@ -47,11 +63,14 @@ export class ColorsListPanelComponent implements OnInit {
   }
 
   onCopyAction(colorName: string, colorCode: string) {
-    const message = 'Color ' + colorName + ' copied!';
+    const message = 'Color ' + colorName.toUpperCase() + ' copied in clipboard!';
     copyToClipboard(colorCode.toLocaleUpperCase());
-    this._snackBar.open(message, null, {
-      duration: 2000,
-      panelClass: 'blue-snackbar'
+    this.snackBar.open(message, null, {
+      duration: 2000
     });
+  }
+
+  getMessageTooltip(color: string) {
+    return 'Click the circle to copy the ' + color.toUpperCase() + ' color code';
   }
 }

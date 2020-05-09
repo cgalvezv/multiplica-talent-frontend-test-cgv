@@ -1,22 +1,12 @@
-.tab-group{
-    height: 100%;
-}
-.mat-tab-label {
-    min-width: 25px !important;
-    padding: 5px;
-    color: gray;
-    font-weight: 700;
+.main-panel {
+    background: #eee;
 }
 
-/* Styles for the active tab label */
-.mat-tab-label.mat-tab-label-active {
-    min-width: 25px !important;
-    padding: 5px;
-    color: black;
-    font-weight: 700;
+mat-tab-group{
+    height: 100vh;
 }
 
-.example-tab-icon {
+.tab-icon {
     margin-right: 8px;
 }
 

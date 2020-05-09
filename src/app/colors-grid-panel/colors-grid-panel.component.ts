@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ColorApiService } from '../shared/services/color-api.service';
 import { ResponseColorData, Color } from '../shared/models/color.model';
 import { PageEvent } from '@angular/material/paginator';
+import { MediaObserver, MediaChange } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-colors-grid-panel',
@@ -12,21 +13,29 @@ export class ColorsGridPanelComponent implements OnInit {
 
   colorData: ResponseColorData = null;
   colors: Color[] = [];
+  currentScreenWidth = '';
+  filterValue = '';
   
   constructor(
-    private _colorsAPI: ColorApiService
-  ) { }
+    private mediaObs: MediaObserver,
+    private colorsAPI: ColorApiService
+  ) {
+    this.mediaObs.media$.subscribe((change: MediaChange) => {
+      if (change.mqAlias !== this.currentScreenWidth) {
+          this.currentScreenWidth = change.mqAlias;
+      }
+    });
+  }
 
   ngOnInit(): void {
     this._initColors(1, 9);
   }
 
   private _initColors(page: number, perPage: number) {
-    this._colorsAPI.getColors(page, perPage).subscribe(res => {
+    this.colorsAPI.getColors(page, perPage).subscribe(res => {
       if (!!res) {
         this.colorData = res;
         this.colors = res.data;
-        console.log('this.colors', this.colors);
       }
     });
   }
@@ -34,6 +43,10 @@ export class ColorsGridPanelComponent implements OnInit {
   private _resetColors(page: number, perPage: number) {
     this.colors = [];
     this._initColors(page, perPage);
+  }
+
+  applyFilter(event: Event) {
+    this.filterValue = (event.target as HTMLInputElement).value;
   }
 
   changePage(event: PageEvent) {

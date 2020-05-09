@@ -8,14 +8,14 @@ table {
 }
 
 .content-list {
-    margin: 2% 5%;
-    padding: 2% 5%;
+    margin: 1% 5%;
 }
 
 .content-table {
     position: relative;
-    max-height: 485px;
+    max-height: 100%;
     overflow: auto;
+    margin-bottom: 10%;
 }
 
 .copy-button {
@@ -24,7 +24,8 @@ table {
 }
 
 .footer {
+    position: fixed;
     bottom: 0;
-    position: sticky;
+    width: 100%;
     z-index: 10;
 }
