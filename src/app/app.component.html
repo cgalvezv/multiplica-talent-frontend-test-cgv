@@ -1,9 +1,12 @@
 <router-outlet></router-outlet>
-<mat-sidenav-container>
-    <mat-sidenav mode="side"opened color="primary">
-        <h1>Color Catalogue</h1>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <app-main-panel></app-main-panel>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-toolbar color="primary">
+    <h1 class="app-name">Color Catalogue - v {{ appVersion }}</h1>
+    <span class="spacer"></span>
+    <p class="author"
+        fxHide.sm="true"
+        fxHide.xs="true"
+    > 
+        by <b>Camilo Gálvez Vidal</b>
+    </p>
+</mat-toolbar>
+<app-main-panel></app-main-panel>

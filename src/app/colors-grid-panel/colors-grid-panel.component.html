@@ -1,12 +1,28 @@
-
-<div *ngIf="!!colorData" class="container">
+<div class="filter"
+    fxLayout="row wrap"
+    fxLayoutAlign="space-around center stretch"
+    fxLayout.xs="column wrap"
+    fxLayout.sm="column wrap"
+    fxLayoutGap="0.5%">
+    <mat-form-field fxFlex="100%">
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. sand dollar, or #DECDBE">
+    </mat-form-field>
+</div>
+<div *ngIf="!!colorData"
+    class="container" 
+    fxLayout="row wrap"
+    fxLayoutAlign="space-around center stretch"
+    fxLayout.xs="column wrap"
+    fxLayout.sm="column wrap"
+    fxLayoutGap="0.5%">
     <app-color-element 
-        class="item"
-        *ngFor="let color of colors"
-        [colorCode]="color.color"
-        [colorName]="color.name"
-        [year]="color.year"
-        [pantone]="color.pantone_value"
+        fxFlex="30%"
+        fxFlex.sm="0 1 50%"
+        fxFlex.xs="0 1 50%"
+        *ngFor="let color of colors | colorFilter:filterValue "
+        [color]="color"
+        [screenWidth]="currentScreenWidth"
     ></app-color-element>
 </div>
 <app-paginator

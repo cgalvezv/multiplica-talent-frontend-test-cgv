@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+const { version: appVersion } = require('../../package.json');
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'multiplica-talent-frontend-test';
+  appVersion = appVersion;
 }

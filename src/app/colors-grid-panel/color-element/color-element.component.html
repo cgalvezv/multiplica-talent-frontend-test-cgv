@@ -1,15 +1,23 @@
 <button mat-stroked-button 
     class="color-button"
-    (click)="onCopyAction(colorName, colorCode)"
+    (click)="onCopyAction(color)"
     [ngStyle]="backgroundColor">
-    <div class="content-init">
-      {{ year }}
+    <div class="content-init"
+      fxShow.xs="false"
+      fxShow.sm="false">
+      {{ color.year }}
     </div>
     <div class="content-center">
-      <h4 class="text-center">{{ colorName | uppercase }}</h4>
-      <p class="text-center">{{ colorCode }}</p>
+      <h4 class="text-center" 
+        fxShow.xs="false" 
+        fxShow.sm="false">
+        {{ color.name | uppercase }}
+      </h4>
+      <p class="text-center">{{ color.color }}</p>
     </div>
-    <div class="content-end">
-      {{ pantone }}
+    <div class="content-end" 
+      fxShow.xs="false"
+      fxShow.sm="false">
+      {{ color.pantone_value }}
     </div>
 </button>
