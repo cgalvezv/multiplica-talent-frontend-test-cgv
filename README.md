@@ -26,22 +26,22 @@ The color information is obtained using an HTTPS call to the following URL `http
 This project was generated with [Angular](https://github.com/angular/angular-cli) version 9.0.6.
 
 **Use of the extra points:**
-    - Use some front end framework for the development of the application
+- Use some front end framework for the development of the application
 > Angular version 9.0.6 was used for the development of this application.
 
-    - Modularize the components in an orderly fashion and with their corresponding CSS
+- Modularize the components in an orderly fashion and with their corresponding CSS
 > Angular works with components, within this existing application the following components with their respective styles: main panel component, color grid component, color list component, among others.
 
-    - Use flexbox for the grid
+- Use flexbox for the grid
 > For the squares component, we used Angular flex-layout, for the order of the squares, and to add the behavior and order for the mobile devices and devices with larger screen.
 
-    - Using Git as Version Control
+- Using Git as Version Control
 > The project is stored in a public GitHub repository, specifically at [my account](https://github.com/cgalvezv/multiplica-talent-frontend-test-cgv).
 
-    - Deploy your application to a server (Netlify, Heroku, Zeit Now)
+- Deploy your application to a server (Netlify, Heroku, Zeit Now)
 > The [application](https://elastic-borg-9f3530.netlify.app/) was deployed using Netlify.
 
-    - Use some CSS framework to decorate the application
+- Use some CSS framework to decorate the application
 > I don't know if they are considered as CSS frameworks, but I used Angular Material as a UI component library.
 
 ## Versión en Español
