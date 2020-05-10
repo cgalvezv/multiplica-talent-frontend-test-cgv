@@ -48,7 +48,8 @@ export class ColorElementComponent implements OnInit {
    * @author Camilo Gálvez Vidal
    */
   onCopyAction(color: Color) {
-    // In mobile devices
+    // In mobile devices, show a mat bottom sheet with the entire information about the color, and then
+    // if the user want, can do the copy of the color code in the clipboard
     if (this.screenWidth === MOBILE.XS_SCREEN || this.screenWidth === MOBILE.SM_SCREEN) {
       const refBottomSheet = this.bottomSheet.open(MobileBottomSheetComponent, {
         data: this.color
@@ -58,7 +59,7 @@ export class ColorElementComponent implements OnInit {
         .subscribe((colorSelected: Color) => {
           this._copyInClipboard(colorSelected.name, colorSelected.color);
         });
-    } else { // In web devices
+    } else { // In web devices, the color code is immediately copied into the clipboard
       this._copyInClipboard(color.name, color.color);
     }
   }
