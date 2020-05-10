@@ -1,9 +1,11 @@
 
 <div *ngIf="!!dataSource" class="content-list">
+    <!-- filter input field -->
     <mat-form-field>
         <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. sand dollar, or #DECDBE">
+        <input matInput (keyup)="applyFilter($event)" [placeholder]="placeholder">
     </mat-form-field>
+    <!-- Content list section -->
     <div class="content-table">
         <table [dataSource]="dataSource"
             class="mat-elevation-z8 "
@@ -46,12 +48,14 @@
         </table>
     </div>
 </div>
-<mat-toolbar 
+<!-- Footer (only mobile) -->
+<footer 
   fxShow="false"
   fxShow.xs="true" 
-  fxShow.sm="true"
-  color="primary" class="footer">
-    <mat-toolbar-row>
-        <span >Click the circle to copy the color code</span>
-    </mat-toolbar-row>
-</mat-toolbar>
+  fxShow.sm="true">
+  <mat-toolbar color="primary" class="footer">
+      <mat-toolbar-row>
+          <span >Click the circle to copy the color code</span>
+      </mat-toolbar-row>
+  </mat-toolbar>
+</footer>

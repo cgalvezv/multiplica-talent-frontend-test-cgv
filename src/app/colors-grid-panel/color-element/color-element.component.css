@@ -20,13 +20,6 @@
     left: 0;
 }
 
-.content-end {
-    padding: 5px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
 .content-center {
     flex: inherit;
 }
@@ -34,4 +27,11 @@
 .text-center {
     text-align: center;
     margin: 0.5%;
+}
+
+.content-end {
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
