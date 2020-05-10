@@ -6,6 +6,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./main-panel.component.css'],
   encapsulation: ViewEncapsulation.None
 })
+/**
+ * Component that contains the tabs to display the catalog either in list or grid
+ * @author Camilo Gálvez Vidal
+ */
 export class MainPanelComponent implements OnInit {
 
   constructor() { }

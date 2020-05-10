@@ -7,7 +7,11 @@
       fxShow.sm="false">
       {{ color.year }}
     </div>
-    <div class="content-center">
+    <div class="content-center"
+      [matTooltip]="tooltipMsg"
+      matTooltipPosition="below"
+      matTooltipShowDelay="1000"
+    >
       <h4 class="text-center" 
         fxShow.xs="false" 
         fxShow.sm="false">

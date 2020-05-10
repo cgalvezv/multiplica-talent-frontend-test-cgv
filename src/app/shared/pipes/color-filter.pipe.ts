@@ -4,6 +4,10 @@ import { Color } from '../models/color.model';
 @Pipe({
   name: 'colorFilter'
 })
+/**
+ * This pipe filters elements within the color list, based on a received value
+ * @author Camilo Gálvez Vidal
+ */
 export class ColorFilterPipe implements PipeTransform {
 
   transform(colors: Color[], value: string): Color[] {
