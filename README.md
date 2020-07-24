@@ -16,7 +16,7 @@ As another feature, the application is responsive, that is, it supports the size
 The color information is obtained using an HTTPS call to the following URL `https://reqres.in/api/colors`.
 
 >To access this application you can do it in two ways
->- The short way: by accessing the following URL `https://elastic-borg-9f3530.netlify.app/`
+>- The short way: by accessing the following URL `https://goofy-cray-f8ef59.netlify.app/`
 >- The long way: download the attached repository and execute the following commands
 >`cd multiplica-talent-frontend-test`
 >`npm install -save`
@@ -39,7 +39,7 @@ This project was generated with [Angular](https://github.com/angular/angular-cli
 > The project is stored in a public GitHub repository, specifically at [my account](https://github.com/cgalvezv/multiplica-talent-frontend-test-cgv).
 
 - Deploy your application to a server (Netlify, Heroku, Zeit Now)
-> The [application](https://elastic-borg-9f3530.netlify.app/) was deployed using Netlify.
+> The [application](https://goofy-cray-f8ef59.netlify.app/) was deployed using Netlify.
 
 - Use some CSS framework to decorate the application
 > I don't know if they are considered as CSS frameworks, but I used Angular Material as a UI component library.
@@ -58,7 +58,7 @@ Como otra característica, la aplicación es responsive, o sea, soporta las el t
 La información de los colores se obtiene utilizando una llamada HTTPS al siguiente URL `https://reqres.in/api/colors`
 
 >Para acceder a esta aplicación se puede hacer de dos maneras:
->- La vía corta: accediendo al siguiente URL `https://elastic-borg-9f3530.netlify.app/`
+>- La vía corta: accediendo al siguiente URL `https://goofy-cray-f8ef59.netlify.app/`
 >- La vía larga: descargar el repositorio adjunto y executar los siguientes comandos:
 >`cd multiplica-talent-frontend-test`
 >`npm install —save`
@@ -79,7 +79,7 @@ La información de los colores se obtiene utilizando una llamada HTTPS al siguie
 > El proyecto se encuentra almacenado en un repositorio público de GitHub, en específico en [mi cuenta](https://github.com/cgalvezv/multiplica-talent-frontend-test-cgv).
 
 - Hacer deploy de tu aplicación a un servidor (Netlify, Heroku, Zeit Now)
-> Se realizó deploy de la [aplicación](https://elastic-borg-9f3530.netlify.app/) utilizando Netlify.
+> Se realizó deploy de la [aplicación](https://goofy-cray-f8ef59.netlify.app/) utilizando Netlify.
 
 - Utilizar algún framework de CSS para decorar la aplicación
 > No se si se considera como frameworks de CSS, pero utilicé Angular Material como librería de componentes UI.
